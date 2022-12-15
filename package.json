@@ -1,8 +1,8 @@
 {
-  "name": "parcel-project-template",
+  "name": "Filmoteka",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://AleksandrTurlakov.github.io/Filmoteka-13",
+  "homepage": "https://dmytrosvarkovskiy.github.io/Filmoteka/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /Filmoteka-13/"
