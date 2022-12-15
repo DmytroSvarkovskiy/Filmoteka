@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="container header__home__background">
+    <div class="header__links">
+      <a class="header__logo" href="">
+        <img src="/src/img/logo/film.svg" alt="logo" />
+      </a>
+      <a class="header__logo logo-name" href="">Filmoteka</a>
+      <nav class="header__menu">
+        <ul>
+          <li class="link--oreol">
+            <a class="nav-item__link current" href="./index.html ">Home</a>
+          </li>
+
+          <li class="link--oreol lib hidden" id="libHtml">
+            <a href="./myLibrary.html">my library</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="search">
+      <form class="search__form">
+        <input
+          class="search__input"
+          type="text"
+          name="filmName"
+          minlength="3"
+          maxlength="20"
+          placeholder="Movie search"
+          required
+        />
+        <button class="search__btn" type="submit">
+          <img class="icon-search" src="/src/img/icons/search.svg" alt="logo" />
+        </button>
+      </form>
+      <div class="border"></div>
+    </div>
+  </div>
+</header>

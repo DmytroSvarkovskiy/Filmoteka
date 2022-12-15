@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/main.scss" />
+    <title>myLibrary</title>
+  </head>
+  <body>
+    <include src="./partials/header-myLibrary.html"></include>
+    <div class="backdrop is-hidden"></div>
+    <div class="container">
+      <div class="library">
+        <div class="library-bg__image"></div>
+      </div>
+      <ul class="library__list list visually-hidden"></ul>
+    </div>
+    <include src="./partials/footer-modal.html"></include>
+    <include src="./partials/footer.html"></include>
+    <div class="scroll-up">
+      <svg class="scroll-up__svg" viewBox="-2 -2 52 52">
+        <path
+          class="scroll-up__svg-path"
+          d="M24,0
+        a24,24 0 0,1 0,48
+        a24,24 0 0,1 0,-48"
+        />
+      </svg>
+    </div>
+    <script src="./js/footer-modal.js" type="module"></script>
+    <script src="myLibrary.js" type="module"></script>
+  </body>
+</html>

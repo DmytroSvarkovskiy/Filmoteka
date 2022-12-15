@@ -1,0 +1,221 @@
+.modal {
+  position: relative;
+  overflow: auto;
+  max-height: 97vh;
+  border-radius: 2em;
+  width: 280px;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+
+  line-height: 1.33;
+  text-align: left;
+  padding: 30px 20px 20px;
+  font-weight: 500;
+  letter-spacing: normal;
+  z-index: 11;
+
+  @include tablet {
+    display: flex;
+    width: 704px;
+    height: 552px;
+    padding: 40px 40px 30px 36px;
+  }
+
+  @include desktop {
+    height: 558px;
+    width: 806px;
+    padding: 40px 30px 20px 12px;
+  }
+
+  &__filmBox {
+    @include tablet {
+      width: 264px;
+    }
+
+    @include desktop {
+      width: 391px;
+    }
+  }
+
+  &__poster {
+    height: 357px;
+
+    @include tablet {
+      height: 373px;
+      width: 264px;
+      margin-right: 68px;
+    }
+
+    @include desktop {
+      height: 478px;
+      width: 375px;
+      margin-right: 16px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.7em;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 1.15;
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 0px;
+    }
+  }
+
+  &__table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: #8c8c8c;
+    padding-right: 39px;
+
+    @include desktop {
+      padding-right: 83px;
+    }
+  }
+
+  &__vote {
+    background-color: #ff6b01;
+    border-radius: 5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 15px;
+    display: inline-flex;
+    line-height: 1.16;
+  }
+
+  &__total {
+    line-height: 1.16;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    width: 36px;
+    height: 13px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__nameOriginal {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    line-height: 1.66;
+    overflow: auto;
+    margin-bottom: 20px;
+
+    @include desktop {
+      max-height: 240px;
+    }
+  }
+
+  &__h3 {
+    margin-bottom: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  &__watchedButton,
+  &__queueButton,
+  &__trailerButton {
+    width: 80px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+    @include tablet {
+      width: 85px;
+      height: 40px;
+    }
+    @include desktop {
+      width: 110px;
+      height: 45px;
+    }
+    &:hover {
+      background-color: #ff6b01;
+      color: #ffffff;
+      border-color: #ff6b01;
+    }
+  }
+}
+
+.button-close {
+  display: flex;
+  margin-left: auto;
+
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  background-image: url('/src/img/icons/close-icon-black.svg');
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  &__icon {
+    fill: #000000;
+    border-radius: 50%;
+    z-index: 50;
+  }
+
+  &:hover &__icon {
+    background-image: url('/src/img/icons/close-icon-orange.svg');
+  }
+}
+
+.backdrop {
+  position: fixed;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0.4), #00000033);
+  transition: opacity, visibility, 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.modal__about {
+  margin-bottom: 8px;
+}

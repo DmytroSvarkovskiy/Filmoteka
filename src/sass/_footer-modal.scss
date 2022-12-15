@@ -1,0 +1,195 @@
+// Aleksandr Velychkovskiy
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.backdrop-footer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: saturate(180%) blur(10px);
+  opacity: 1;
+  z-index: 300;
+  padding: 20px;
+  transition: transform 350ms $transition-timing-function;
+
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.is-hidden-footer {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal-box {
+  max-height: 100%;
+  width: 300px;
+  position: absolute;
+  padding: 20px;
+  overflow-x: hidden;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+  // box-shadow: (0px 8px 43px rgba(0, 0, 0, 0.56));
+  border-radius: 10px;
+  overflow: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  @media screen and (min-width: $tablet) {
+    width: 610px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 950px;
+  }
+  transition: transform 300ms $transition-timing-function;
+}
+.modal-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: $highlight_color;
+  text-shadow: rgb(47, 47, 47) 1px 0 7px;
+  font-size: 35px;
+  font-weight: 2000;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  text-align: center;
+
+  // grid-template-columns: repeat(1, 1fr);
+  // grid-template-rows: repeat(1, 1fr);
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+}
+
+.grid-img {
+  // height: 100%;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  transition: 400ms $transition-timing-function;
+  &:hover {
+    transform: scale(1.13);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer-modal-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  cursor: pointer;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  @media screen and (min-width: $tablet) {
+    height: 185px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 280px;
+    width: 280px;
+  }
+}
+
+//developer@name
+.grid-box {
+  background-color: $highlight_color;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.modal-box__btn {
+  fill: $highlight_color;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+
+  transition: fill 300ms $transition-timing-function,
+    border-color 300ms $transition-timing-function;
+  &:hover,
+  &:focus {
+    fill: #000000;
+  }
+}
+
+// footer btn GOIT
+.footer-btn {
+  padding: 0;
+  margin-left: 5px;
+  height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  display: flex;
+  border: transparent;
+  background-color: transparent;
+  position: relative;
+  color: #545454;
+  border-bottom: 1px solid;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 1.19;
+    position: relative;
+  }
+
+  transition: color 500ms $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $highlight_color;
+    transform: scale(1.04);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $highlight_color;
+  }
+}
