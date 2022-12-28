@@ -13,10 +13,11 @@
   opacity: 0;
   transition: 200;
   transform: translateY(25px);
+  transition: all 0.3s;
 }
 
 .scroll-up::before {
-  content: '\2BB8';
+  content: '\21E7';
   position: absolute;
   top: 0;
   left: 0;
